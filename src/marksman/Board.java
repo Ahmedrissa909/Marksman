@@ -32,8 +32,8 @@ public class Board extends JComponent implements KeyListener, MouseMotionListene
   public void keyPressed(KeyEvent e ) {
 //    System.out.println(";" + e.getKeyCode());
     switch(e.getKeyCode()) {
-      case 32:
-      case 10:
+      case 32: // space
+      case 10: // enter
         if(isGameOver || gameFinished) {
           if(e.getKeyCode() == 32 || e.getKeyCode() == 10) {
             if(gameFinished) gameFinished = !gameFinished;
@@ -49,13 +49,6 @@ public class Board extends JComponent implements KeyListener, MouseMotionListene
           shot.y = blowGun.y + 5;
           isAlowFire = !shot.isVisible;
         }
-        break;
-      case 27:
-        setBestPoints();
-        System.exit(0);
-        break;
-      case 65:
-        startNextLevel();
         break;
     }
   }
